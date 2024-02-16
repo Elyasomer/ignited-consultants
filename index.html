@@ -593,6 +593,9 @@ https://templatemo.com/tm-557-grad-school
             contact telephone no: <a href="tel:+447863506310">+44 7863506310</a>
           </h5>
         </div>
+        <div class="col-md-12 text-center contact py-5">
+          <h5 id="formMsg"></h5>
+        </div>
       </div>
     </div>
   </section>
@@ -645,8 +648,16 @@ https://templatemo.com/tm-557-grad-school
       }
       grecaptcha.ready(function () {
         grecaptcha.execute('6LeQO3ApAAAAAFAW0x2q0qJH7oIwdvIwlefmSNqt', { action: 'submit' }).then(function (token) {
-          emailjs.send("service_j3n6ull", "template_srybweq", temp_params);
-        });
+          emailjs.send("service_j3n6ull", "template_srybweq", {...temp_params, "g-recaptcha-response": token});
+        }).then(
+          (response) => {
+            document.getElementById("formMsg").innerText = "Thanks! We recieved your message and we will get back to you soon."
+            console.log('SUCCESS!', response.status, response.text);
+          },
+          (error) => {
+            console.log('FAILED...', error);
+          },
+        );
 
       })})
   </script>
