@@ -310,6 +310,7 @@ a.menu-link { display: none; }
     left: 0;
     bottom: 7px;
     width: 100%;
+    height: 100vh;
 }
 
 .main-banner .caption {
@@ -1439,15 +1440,6 @@ img.mfp-img {
 
 
 
-/* Contact */
-
-section.contact {
-    background-image: url(../images/contact-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #172238;
-    padding-bottom: 120px;
-}
 
 
 section.contact form {
