@@ -498,6 +498,8 @@ section.why-us {
   text-align: center;
 }
 #tabs ul {
+  display: flex;
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
   -webkit-column-count: 3;
